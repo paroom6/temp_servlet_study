@@ -1,0 +1,20 @@
+package com.study.Todo_list.entity;
+
+import com.study.Todo_list.Dto.insertTodoListdto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+
+public class TodoList {
+	private int TodoListId;
+	private String TotoListContext;
+	
+	public insertTodoListdto toDto() {
+		return insertTodoListdto.builder()
+								.TotoListContext(TotoListContext)
+								.build();
+	}
+}

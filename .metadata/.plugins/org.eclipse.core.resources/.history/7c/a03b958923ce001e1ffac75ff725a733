@@ -1,0 +1,17 @@
+package com.study.Todo_list.Dto;
+
+import com.study.Todo_list.entity.TodoList;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class insertTodoListReqDto {//입력 받은 객체
+	private String TotoListContext;
+	public TodoList toTodoList() {
+		return TodoList.builder()
+						.todo_content(TotoListContext)
+						.build();
+	}
+}

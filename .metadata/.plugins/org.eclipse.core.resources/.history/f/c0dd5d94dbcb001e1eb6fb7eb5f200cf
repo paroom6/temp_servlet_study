@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%//서블릿과 같은 환경-jsp 
+    
+      //서버사이드렌더링
+      //검색 엔진 최적화 + cors에 걸리지 않음
+      // csl은 검색에 취약하다.
+    	//스크립트릿
+    	List<String> names = List.of("조성민","조성이","조성삼");
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>hello</h1>
+	<h1><%=name%></h1>
+</body>
+</html>

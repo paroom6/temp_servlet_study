@@ -1,0 +1,32 @@
+package com.study.Todo_list.Dto;
+
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+import javax.lang.model.util.SimpleAnnotationValueVisitor14;
+
+import com.study.Todo_list.entity.TodoList;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class insertTodoListReqDto {//입력 받은 객체
+	private String 	todo_content;
+	private String todo_summary;
+	private String todo_date_str;
+	private String todo_priority;
+	private Date todo_date;
+	public TodoList toTodoList() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat();
+		todo_date = dateFormat();
+		return TodoList.builder()
+				.todo_content(todo_content)
+				.todo_summary(todo_summary)
+				.todo_date(todo_date)
+				.todo_priority(todo_priority)
+				.build();
+	}
+}

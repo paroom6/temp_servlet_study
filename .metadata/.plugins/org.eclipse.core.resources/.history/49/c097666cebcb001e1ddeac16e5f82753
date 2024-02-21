@@ -1,0 +1,6 @@
+package com.study.Todo_list.entity;
+
+public class TodoList {
+	private int TodoListId;
+	private String TotoListContext;
+}

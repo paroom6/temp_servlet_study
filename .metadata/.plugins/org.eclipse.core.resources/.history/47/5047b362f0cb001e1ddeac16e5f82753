@@ -1,0 +1,7 @@
+package com.study.Todo_list.Dto;
+
+public class insertTodoListRespDto {
+	private int TodoListId;
+	private String TotoListContext;
+	private int successCount;
+}

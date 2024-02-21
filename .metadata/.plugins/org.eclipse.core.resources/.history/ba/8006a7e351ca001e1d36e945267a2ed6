@@ -1,0 +1,5 @@
+package com.study.DBConnect_try.servlet;
+
+public class DBConnect_servlet {
+
+}

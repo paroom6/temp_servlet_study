@@ -1,0 +1,15 @@
+package com.study.Todo_list.repository;
+
+public class TodoListRepository {
+	private static TodoListRepository instance;
+	
+	private TodoListRepository() {}
+	
+	public static TodoListRepository getInstance() {
+		if(instance == null) {
+			instance = TodoListRepository();
+		}
+		return instance;
+	}
+
+}

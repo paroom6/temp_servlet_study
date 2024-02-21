@@ -1,0 +1,53 @@
+package com.study.Todo_list.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.study.Todo_list.Dto.insertTodoListReqDto;
+import com.study.Todo_list.Dto.insertTodoListRespDto;
+import com.study.Todo_list.config.DBConnectionMgr;
+import com.study.Todo_list.entity.TodoList;
+
+public class TodoListRepository {
+	private static TodoListRepository instance;
+	
+	private TodoListRepository() {}
+	
+	public static TodoListRepository getInstance() {
+		if(instance == null) {
+			instance = new TodoListRepository();
+		}
+		return instance;
+	}
+	
+	public int addTodoList(TodoList todoList) {
+		DBConnectionMgr pool = DBConnectionMgr.getInstance();
+		Connection con = null;
+		insertTodoListRespDto respDto = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int successCount = 0;
+		try {
+			con = pool.getConnection();
+			String sql = "insert into Todo_tb values (0,?);";
+			pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setString(1, dto.getTotoListContext());
+			successCount = pstmt.executeUpdate();
+			rs = pstmt.getGeneratedKeys(); 
+			if(rs.next()) {
+				
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		
+		return insertTodoListRespDto.builder()
+									.TodoListId(successCount);
+	}
+
+}

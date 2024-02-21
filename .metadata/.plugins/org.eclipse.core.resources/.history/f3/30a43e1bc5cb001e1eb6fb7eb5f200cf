@@ -1,0 +1,22 @@
+package com.study.product.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class SearchProductRespDto { //클라이언트 Json-Dto 서블릿 Dto-Dto 서비스 Dto-Vo Dao 항상 형식을 맞추어야한다.
+	private int product_id;
+	private String product_name;
+	private int product_price;
+	private String product_size;
+	
+	public static toDtoList(List<productVo> productlist) {
+		List<SearchProductRespDto> products = new ArrayList<>();
+		
+	}
+	
+}

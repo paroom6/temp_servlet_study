@@ -1,0 +1,8 @@
+async function handleLoginClick() {
+	const inputs = document.querySelectorAll("input");
+	
+	const loginUser = {
+		username: inputs[0].value,
+		password: inputs[1].value
+	}
+}

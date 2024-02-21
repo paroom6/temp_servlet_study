@@ -1,0 +1,29 @@
+package com.study.Todo_list.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.study.Todo_list.config.DBConnectionMgr;
+
+public class TodoListRepository {
+	private static TodoListRepository instance;
+	
+	private TodoListRepository() {}
+	
+	public static TodoListRepository getInstance() {
+		if(instance == null) {
+			instance = new TodoListRepository();
+		}
+		return instance;
+	}
+	
+	public int addTodoList() {
+		DBConnectionMgr pool = DBConnectionMgr.getInstance();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		con = pool.getConnection();
+		
+		return 0;
+	}
+
+}

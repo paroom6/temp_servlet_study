@@ -1,0 +1,16 @@
+1707956153690	Rename package 'com.study.product.Dto'
+1707956243216	Rename package 'com.study.product.entity'
+1707957390770	Rename type 'ProductDto'
+1707960738764	Copy packages
+1707960756310	Copy packages
+1707960878558	Copy package
+1707961430579	Rename type 'Product'
+1707963336904	Delete element
+1707963425192	Delete element
+1708043797984	Copy file
+1708043801125	Move 'hello.jsp' to 'hellotest'
+1708043837123	Delete element
+1708043986504	Rename resource 'view'
+1708043989858	Move 'signup.jsp' to 'views'
+1708043991307	Move 'views' to 'WEB-INF'
+1708050102540	Rename resource 'js'

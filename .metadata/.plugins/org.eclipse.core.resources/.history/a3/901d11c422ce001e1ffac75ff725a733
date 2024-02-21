@@ -1,0 +1,26 @@
+package com.study.Todo_list.entity;
+
+import java.util.Date;
+
+import com.study.Todo_list.Dto.insertTodoListRespDto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+
+public class TodoList {
+	private int todo_id;
+	private String todo_content;
+	private String todo_summary;
+	private Date todo_data;
+	
+	public insertTodoListRespDto toDto(int successCount) {
+		return insertTodoListRespDto.builder()
+								.TodoListId(TodoListId)
+								.TotoListContext(TotoListContext)
+								.successCount(successCount)
+								.build();
+	}
+}

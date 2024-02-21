@@ -1,0 +1,35 @@
+package com.study.product.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/SignUp")
+public class signuppage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public signuppage() {
+        super();
+        
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request, response);
+		//jsp로 변환해준다.
+		ServletContext application = request.getServletContext();
+		//페이지의 모든 설정, 전역저장소
+		application.setAttribute("key", "value(object)");
+		//jsp에서는 application으로 뜨나 객체는 ServletContext이다
+		
+		request.setAttribute("key", "value(object)");
+		// request의 setAttribute와 request의 application의 setAttribute은 다르다.
+	}
+
+
+}

@@ -1,0 +1,17 @@
+package com.study.product.utils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+public class ResponseUtil {
+	public static void insertResponse(HttpServletResponse response, String Masseage, int status) {
+		Map<String, Object> Map = new HashMap<>();
+		Map.put("Masseage",Masseage);
+		response.setStatus(status);
+		response.setContentType("application/json");
+		response.getWriter().println(gson.toJson(errorMap));
+		return;
+	}
+}

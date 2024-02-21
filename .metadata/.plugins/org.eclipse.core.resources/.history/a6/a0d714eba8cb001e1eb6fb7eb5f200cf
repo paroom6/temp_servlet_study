@@ -1,0 +1,19 @@
+package com.study.product.utils;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+public class ResponseEntity {
+	public static <T> void response(HttpServletResponse response, T body, int status) throws IOException {
+		Map<String, Object> Map = new HashMap<>();
+		Gson gson = new Gson(); 
+		response.setStatus(status);
+		response.setContentType("application/json");
+		response.getWriter().println(gson.toJson(body));
+	}
+}

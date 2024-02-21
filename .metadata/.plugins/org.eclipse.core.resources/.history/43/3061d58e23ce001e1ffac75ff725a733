@@ -1,0 +1,27 @@
+package com.study.Todo_list.Dto;
+
+import java.util.Date;
+
+import com.study.Todo_list.entity.TodoList;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class insertTodoListReqDto {//입력 받은 객체
+	private String todo_content;
+	private String todo_summary;
+	private Date todo_data;
+	private String todo_priority;
+	public TodoList toTodoList() {
+		return TodoList.builder()
+				.todo_id(todo_id)
+				.todo_content(todo_content)
+				.todo_summary(todo_summary)
+				.todo_data(todo_data)
+				.todo_priority(todo_priority)
+				.successCount(successCount)
+				.build();
+	}
+}

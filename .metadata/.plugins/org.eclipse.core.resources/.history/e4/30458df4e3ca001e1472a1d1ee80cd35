@@ -1,0 +1,37 @@
+package com.study.insert_and_select.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.study.insert_and_select.entity.Student;
+
+public class Student_dao {
+	public Student findStudentByName(String name) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Student student = null;
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return student;
+	}
+	public int saveStudent(Student student) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int succesCount = 0;
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return succesCount;
+	}
+}

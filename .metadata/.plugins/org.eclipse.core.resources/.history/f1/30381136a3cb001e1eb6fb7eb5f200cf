@@ -1,0 +1,9 @@
+package com.study.product.utils;
+
+import javax.servlet.http.HttpServletResponse;
+
+public class ResponseUtil {
+	public static void insertResponse(HttpServletResponse response) {
+		
+	}
+}

@@ -1,0 +1,17 @@
+package com.study.Todo_list.service;
+
+import com.study.Todo_list.repository.TodoListRepository;
+
+public class TodoListService {
+	private TodoListRepository todoListRepository;
+	private static TodoListService instance;
+	
+	private TodoListService() {}
+	
+	public static TodoListService getInstance() {
+		if(instance == null) {
+			instance = new TodoListService();
+		}
+		return instance;
+	}
+}

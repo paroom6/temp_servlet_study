@@ -1,0 +1,31 @@
+package com.study.product.service;
+
+import com.study.product.dao.ProductDao;
+import com.study.product.dto.insertProductReqDto;
+
+public class ProductService {
+	private static ProductService instance;
+	private ProductDao productDao;
+	
+	
+	
+	private ProductService() {
+		productDao = ProductDao.getInstance();		
+	}
+	
+	public static ProductService getInstance() {
+		if(instance == null) {
+			instance = new ProductService();
+		}
+		return instance;
+	}
+	
+	public boolean isDuplicatedProductName(String productName) {
+		return (productDao.findProductByProductName(productName) != null;
+
+	}
+	
+	public void addProduct(insertProductReqDto reqDto) {
+		productDao.addProduct(null);
+	}
+}

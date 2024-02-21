@@ -1,0 +1,13 @@
+package com.study.Todo_list.Dto;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class insertTodoListRespDto { //입력후 서버로 돌려줄 객체
+	private int TodoListId;
+	private String TotoListContext;
+	private int successCount;
+
+}

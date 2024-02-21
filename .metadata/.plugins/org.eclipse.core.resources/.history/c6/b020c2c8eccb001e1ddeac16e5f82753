@@ -1,0 +1,35 @@
+package com.study.Todo_list.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.study.Todo_list.config.DBConnectionMgr;
+
+public class TodoListRepository {
+	private static TodoListRepository instance;
+	
+	private TodoListRepository() {}
+	
+	public static TodoListRepository getInstance() {
+		if(instance == null) {
+			instance = new TodoListRepository();
+		}
+		return instance;
+	}
+	
+	public int addTodoList() {
+		DBConnectionMgr pool = DBConnectionMgr.getInstance();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = pool.getConnection();
+			String sql = "insert into Todo_tb values (0,?);"
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+}

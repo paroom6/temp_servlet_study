@@ -1,0 +1,56 @@
+package com.study.product.servlet;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.study.product.dao.ProductDao;
+import com.study.product.dto.insertProductReqDto;
+import com.study.product.service.ProductService;
+import com.study.product.utils.RequestUtil;
+import com.study.product.utils.ResponseUtil;
+import com.study.product.vo.ProductVo;
+
+
+@WebServlet("/product/addition")
+public class InsertProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public InsertProductServlet() {
+        super();
+    }
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ProductService productService;
+		insertProductReqDto reqDto = insertProductReqDto.builder().build();
+//		Product product = Product.builder().build();
+		Gson gson = new Gson();
+		try {
+			reqDto = RequestUtil.convertJsonData(request, insertProductReqDto.class);		
+		} catch ( Exception e) {
+			ResponseUtil.insertResponse(response, "정보를 정확히 입력하세요", 400);
+			return;
+		}
+		
+		productService = ProductService.getInstance();
+		int result = productService.addProduct(productVo);
+		if(result == 0) {
+			ResponseUtil.insertResponse(response, "등록되지 않았습니다.", 400);
+			return;
+		}
+		Map<String, Object> Map = new HashMap<>();
+		ResponseUtil.insertResponse(response, "등록완료", 400);
+		return;
+	}
+
+}
